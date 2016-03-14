@@ -3,6 +3,7 @@ require_relative "errors.rb"
 
 class Product
   attr_reader :title, :price, :stock
+  attr_writer :stock
   @@products = []
   
   public
@@ -60,5 +61,4 @@ class Product
     end
     @@products << self
   end
-
 end
