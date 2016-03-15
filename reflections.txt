@@ -1,0 +1,9 @@
+1. About 1.5 hours
+
+2. It's not hard since I have Python experience
+
+3. I have added two new features for transaction searching, one based on product
+title, the other one based on customer's name. I think these two could make this
+class handy. Besides, these two methods are easy to be implemented.
+
+4. Understand inheritance more by implementing more classes.

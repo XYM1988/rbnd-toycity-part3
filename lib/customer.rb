@@ -1,4 +1,6 @@
 require_relative "errors.rb"
+require_relative "product.rb"
+require_relative "transaction.rb"
 
 class Customer
   attr_reader :name
@@ -22,13 +24,21 @@ class Customer
   def self.all
     @@customers
   end
+
+  def purchase(product)
+    if product.stock == 0
+      raise OutOfStockError, "'#{product.title}' is out of stock."
+    else
+      return Transaction.new(self, product)
+    end
+  end
   
   private
   
   def add_to_customers
     @@customers.each do |customer|
       if customer.name == @name
-        raise DuplicateCustomerError.new, "#{@name} already exists"
+        raise DuplicateCustomerError.new, "'#{@name}' already exists"
       end
     end
     @@customers << self

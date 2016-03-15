@@ -56,7 +56,7 @@ class Product
   def add_to_products
     @@products.each do |product|
       if product.title == @title
-        raise DuplicateProductError.new, "#{@title} already exists."
+        raise DuplicateProductError.new, "'#{@title}' already exists."
       end
     end
     @@products << self
