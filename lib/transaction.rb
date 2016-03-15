@@ -4,7 +4,7 @@ require_relative "product"
 class Transaction
   attr_reader :id, :customer, :product
   attr_writer :product
-  @@id = 0
+  @@id = 1
   @@transactions = []
   def initialize(customer, product)
     @id = @@id
